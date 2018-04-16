@@ -1,0 +1,37 @@
+<a href="/welcome">My Profile</a>
+<a href="/logout">Logout</a>
+<p>Users you may want to connect with:</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    @{
+        foreach(var user in @ViewBag.OtherUsers)
+        {
+           
+            bool notfriend = true;
+            foreach(var friend in @ViewBag.friendships)
+            {
+
+                if (@user["id"] == @friend["friend_id"])
+                {
+                    notfriend = false;
+
+                }
+            }
+            if (notfriend)
+            {
+                <tr>
+                    <td><a href="/user/@user["id"]">@user["name"]</a></td>
+                    <td><form action="connect" method="POST"> 
+                            <input type="hidden" name="id" value='@user["id"]'>
+                            <input type="submit" value="connect">
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    }
+</table>

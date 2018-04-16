@@ -1,0 +1,10 @@
+/Users/Kevin/Desktop/final_belt/bin/Debug/netcoreapp2.0/final_belt.deps.json
+/Users/Kevin/Desktop/final_belt/bin/Debug/netcoreapp2.0/final_belt.runtimeconfig.json
+/Users/Kevin/Desktop/final_belt/bin/Debug/netcoreapp2.0/final_belt.runtimeconfig.dev.json
+/Users/Kevin/Desktop/final_belt/bin/Debug/netcoreapp2.0/final_belt.dll
+/Users/Kevin/Desktop/final_belt/bin/Debug/netcoreapp2.0/final_belt.pdb
+/Users/Kevin/Desktop/final_belt/obj/Debug/netcoreapp2.0/final_belt.csproj.CoreCompileInputs.cache
+/Users/Kevin/Desktop/final_belt/obj/Debug/netcoreapp2.0/final_belt.AssemblyInfoInputs.cache
+/Users/Kevin/Desktop/final_belt/obj/Debug/netcoreapp2.0/final_belt.AssemblyInfo.cs
+/Users/Kevin/Desktop/final_belt/obj/Debug/netcoreapp2.0/final_belt.dll
+/Users/Kevin/Desktop/final_belt/obj/Debug/netcoreapp2.0/final_belt.pdb

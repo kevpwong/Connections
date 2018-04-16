@@ -1,0 +1,60 @@
+﻿@model final_belt.Models.User
+@{
+    if(@TempData["error"] is null)
+    {
+
+    } 
+    else
+    {
+        <p>@TempData["error"]</p>
+    }
+}
+<!-- ASP-ACTION GOES TO  METHODNAME  -->
+
+<table >
+    <h3>Register</h3>
+    <form asp-controller="Home" asp-action="NewUser" method="post">
+        <tr>
+            <td><label asp-for="Name">Name</label></td>
+            <td><input asp-for="Name"/></td>
+            <td><span asp-validation-for="Name"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Email">Email</label></td>
+            <td><input asp-for="Email"/></td>
+            <td><span asp-validation-for="Email"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Password"></label></td>
+            <td><input asp-for="Password"/></td>
+            <td><span asp-validation-for="Password"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="RepeatPassword"> Repeat Password</label></td>
+            <td><input asp-for="RepeatPassword"/></td>
+            <td><span asp-validation-for="RepeatPassword"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Description"></label></td>
+            <td><textarea asp-for="Description" id="" cols="30" rows="10"></textarea></td>
+            <td><span asp-validation-for="Description"></span></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Create new User</button></td>
+        </tr>
+    </form>
+</table>
+
+@{
+    if (ViewBag.error != null) 
+    {
+        <p>@ViewBag.error</p>
+    }
+    
+}
+<form action="/login" method="POST" >
+    <h3>Login</h3>
+    Email: <input name="loginEmail" type="text"/><br>
+    Password: <input name="loginPass" type="password"/>
+    <button type="submit">Login</button>
+</form>

@@ -1,0 +1,71 @@
+<h3>Hi @ViewBag.User["name"]</h3>
+<a href="/logout">Logout</a>
+<a href="/users">All Users</a>
+
+<h3>Here is your profile description:</h3>
+<p>@ViewBag.User["description"]</p>
+
+
+<h3>Your Professional Network</h3>
+<table>
+
+
+@{
+    foreach(var friend in ViewBag.friendships)
+    {
+        if (@friend["status"] == 1)
+        {
+            <tr>
+                <td><a href="/user/@friend["friend_id"]">@friend["friend_name"]</a></td>
+                <td>
+                    <form action="remove" method="POST"> 
+                        <input type="hidden" name="id" value='@friend["friend_id"]'>
+                        <input type="submit" value="Remove">
+                    </form>
+                </td>
+            </tr>
+            
+            
+        }
+    }
+}
+
+
+
+</table>
+<h3>Invitations</h3>
+<p>The following people asked you to be their network:</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    @{
+        foreach(var friend in ViewBag.friendships)
+        {
+            if (@friend["status"] == 3)
+            {
+                <tr>
+                    <td><a href="/user/@friend["friend_id"]">@friend["friend_name"]</a></td>
+                    <td>
+                        <form action="accept" method="POST" style="display: inline-block;"> 
+                            <input type="hidden" name="id" value='@friend["friend_id"]'>
+                            <input type="submit" value="Accept">
+                        </form>
+                        <form action="ignore" method="POST" style="display: inline-block;"> 
+                            <input type="hidden" name="id" value='@friend["friend_id"]'>
+                            <input type="submit" value="Ignore">
+                        </form>
+                    </td>
+                </tr>
+         
+            }
+        }
+    }
+    
+</table>
+
+                
+
+
+                    
